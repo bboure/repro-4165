@@ -68,6 +68,7 @@ export class SqsMd5AttrsStack extends Stack {
 
     // Add SQS event source to consumer
     consumerFn.addEventSource(new SqsEventSource(queue, {
+      maxBatchingWindow: Duration.seconds(30),
       batchSize: 10,
     }));
 
