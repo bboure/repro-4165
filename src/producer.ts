@@ -30,9 +30,9 @@ export const sendMessageBatch = async (
 export const handler = async (event: unknown) => {
   try {
     const events = [
-      { id: '123', body: JSON.stringify({ foo: 'bar' }) },
-      { id: '456', body: JSON.stringify({ test: 'message', timestamp: Date.now() }) },
-      { id: '789', body: JSON.stringify({ debug: true, data: [1, 2, 3] }) },
+      { id: '123', body: JSON.stringify({ user_id: 1 }) },
+      { id: '456', body: JSON.stringify({ user_id: 2 }) },
+      { id: '789', body: JSON.stringify({ user_id: 3 }) },
     ];
 
     await sendMessageBatch(queueUrl, events);
